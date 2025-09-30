@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cardist — Greeting Gifts</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+
+   <nav class="nav">
+    <!-- Hamburger Button -->
+     <button class="hamburger" id="hamburger" aria-label="Open menu">
+       <span></span><span></span><span></span>
+     </button>
+
+     <!-- Nav Links -->
+      <ul class="nav-list" id="navList">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="shopping.html" class="nav-link">Shopping</a></li>
+        <li><a href="cart.html" class="nav-link">Cart</a></li>
+      </ul>
+    </nav>
+
+
+    <div class="logo">
+      <span class="logo-text">Cardist</span>
+      <span class="logo-wave">❤</span>
+    </div>
+
+    
+
+    <div class="header-actions">
+      <button class="btn small" id="btnWishlistTop">Wishlist (<span id="wishCount">0</span>)</button>
+      <button class="btn primary small" id="btnCartTop">Cart (<span id="cartCount">0</span>)</button>
+      <button class="btn outline small" id="btnSign">Sign in / Sign up</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h1>From your heart to their fingertips.</h1>
+        <p class="lead">Beautiful greeting cards, fresh bouquets, and delicious cakes — all curated to make moments special.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#greeting">Shop Greeting</a>
+          <a class="btn" href="#bouquet">Shop Bouquets</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="slideshow" id="slideshow">
+          <div class="slide show"><img src="/gift.jpg" alt="hero1"></div>
+          <div class="slide"><img src="/flower.png" alt="flower"></div>
+          <div class="slide"><img src="/anniversary-beautiful-birthday-433527.jpg" alt="cake"></div>
+          <div class="slide"><img src="/graduation.jpg" alt="card"></div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Products -->
+    <section id="greeting" class="section products">
+      <h2>Greeting Cards</h2>
+      <div class="product-grid" id="productGridGreeting"></div>
+    </section>
+
+    <section id="bouquet" class="section products">
+      <h2>Bouquets</h2>
+      <div class="product-grid" id="productGridBouquet"></div>
+    </section>
+
+    <section id="cake" class="section products">
+      <h2>Cakes</h2>
+      <div class="product-grid" id="productGridCake"></div>
+    </section>
+
+    <!-- Cart drawer -->
+    <aside id="cartDrawer" class="drawer">
+      <div class="drawer-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="close">×</button>
+      </div>
+      <div id="cartItems" class="drawer-body"></div>
+      <div class="drawer-footer">
+        <div class="total">Total: ₹<span id="cartTotal">0</span></div>
+        <button id="checkoutBtn" class="btn primary">Checkout</button>
+      </div>
+    </aside>
+
+    <!-- Wishlist drawer -->
+    <aside id="wishDrawer" class="drawer right">
+      <div class="drawer-header">
+        <h3>Wishlist</h3>
+        <button id="closeWish" class="close">×</button>
+      </div>
+      <div id="wishItems" class="drawer-body"></div>
+    </aside>
+
+    <!-- Sign In / Sign Up modal -->
+    <div id="authModal" class="modal">
+      <div class="modal-content">
+        <button class="close" id="closeAuth">×</button>
+        <div class="auth-tabs">
+          <button id="tabSignIn" class="active">Sign In</button>
+          <button id="tabSignUp">Sign Up</button>
+        </div>
+
+        <form id="formSignIn" class="auth-form">
+          <label>Email <input type="email" id="signinEmail" required></label>
+          <label>Password <input type="password" id="signinPass" required></label>
+          <button type="submit" class="btn primary">Sign In</button>
+        </form>
+
+        <form id="formSignUp" class="auth-form hidden">
+          <label>Name <input type="text" id="signupName" required></label>
+          <label>Email <input type="email" id="signupEmail" required></label>
+          <label>Password <input type="password" id="signupPass" required></label>
+          <button type="submit" class="btn primary">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Cardist — greeting gifts delivered with love.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

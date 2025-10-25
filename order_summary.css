@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Light background for the body */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    min-height: 100vh;      /* Take full viewport height */
+}
+
+.order-summary-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    max-width: 450px; /* Limit width for a cleaner look */
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.summary-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.summary-details {
+    text-align: left; /* Align text within details section to left */
+    margin-bottom: 40px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between; /* Space labels and values */
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.detail-row .label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 15px; /* Space between label and value */
+}
+
+.detail-row .value {
+    text-align: right; /* Align values to the right */
+    flex-grow: 1; /* Allow value to take remaining space */
+}
+
+.summary-actions {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Space between buttons */
+    margin-bottom: 20px;
+}
+
+.track-order-btn,
+.continue-shopping-btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.track-order-btn {
+    background: linear-gradient(to right, #a7e0c1, #e0b0ff); /* Green-purple gradient */
+    color: #333;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.track-order-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.continue-shopping-btn {
+    background-color: #ffffff;
+    color: #555;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.continue-shopping-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+.bottom-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #e0e0e0; /* Gray triangle */
+    margin: 0 auto; /* Center the triangle */
+    margin-top: 30px; /* Space between buttons and triangle */
+}

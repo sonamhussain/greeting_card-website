@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Cards</title>
+    <link rel="stylesheet" href="browsing.css">
+    
+</head>
+<body>
+    <!-- HEADER SECTION (Reusing "Cardist" logo style from previous pages) -->
+    <header class="header">
+        <div class="logo-container">
+            <h1 class="logo-text">Cardist</h1>
+            <div class="logo-wave"></div>
+        </div>
+        
+        <div class="search-bar-container">
+            <input type="text" placeholder="Search" class="search-input">
+        </div>
+        
+        <div class="menu-icon">
+            &#9776; <!-- Hamburger menu icon -->
+        </div>
+    </header>
+
+    <!-- MAIN PAGE LAYOUT -->
+    <div class="main-layout">
+        
+        <!-- LEFT COLUMN: FILTERS & SORTING SIDEBAR -->
+        <aside class="sidebar">
+            <h3 class="filter-heading">Filters & Sorting</h3>
+
+            <!-- 1. Categories Filter -->
+            <section class="filter-group">
+                <h4>Categories</h4>
+                <div class="tag-group">
+                    <button class="tag active">Anniversary</button>
+                    <button class="tag">Birthday</button>
+                    <button class="tag">Thank you</button>
+                </div>
+            </section>
+
+            <!-- 2. Style Filter -->
+            <section class="filter-group">
+                <h4>Style</h4>
+                <div class="tag-group">
+                    <button class="tag">Minimal</button>
+                    <button class="tag">Fun</button>
+                    <button class="tag">Quirky</button>
+                    <button class="tag">Elegant</button>
+                </div>
+            </section>
+
+            <!-- 3. Color Palette Filter -->
+            <section class="filter-group">
+                <h4>Color Palette</h4>
+                <div class="color-palette">
+                    <span class="color-swatch red"></span>
+                    <span class="color-swatch purple"></span>
+                    <span class="color-swatch green"></span>
+                    <span class="color-swatch yellow"></span>
+                    <span class="color-swatch blue"></span>
+                    <span class="color-swatch pink"></span>
+                </div>
+            </section>
+            
+            <!-- 4. Sorting Options -->
+            <section class="filter-group">
+                <h4>Sorting Options</h4>
+                <div class="sort-options">
+                    <button class="sort-btn active">Most Popular</button>
+                    <button class="sort-btn">Newest</button>
+                </div>
+            </section>
+
+            <!-- 5. Price Range Filter -->
+            <section class="filter-group">
+                <h4>Price</h4>
+                <div class="price-range">
+                    <input type="range" min="0" max="1000" value="500">
+                    <div class="price-labels">
+                        <span>0</span>
+                        <span>1000+</span>
+                    </div>
+                </div>
+            </section>
+            
+        </aside>
+
+        <!-- RIGHT COLUMN: PRODUCT LISTING -->
+        <main class="product-listing">
+            
+            <!-- PRODUCT CARD GRID -->
+            <div class="product-grid">
+                <!-- Single Product Card (Repeated 3 times for structure) -->
+                <div class="product-card">
+                    <div class="card-image-box">
+                        <!-- Placeholder for Card Image/Design -->
+                    </div>
+                    <div class="card-footer">
+                        <button class="like-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0V6Zm-.25 10.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <button class="price-btn">Price</button>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="product-card">
+                    <div class="card-image-box"></div>
+                    <div class="card-footer">
+                        <button class="like-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0V6Zm-.25 10.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <button class="price-btn">Price</button>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="product-card">
+                    <div class="card-image-box"></div>
+                    <div class="card-footer">
+                        <button class="like-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0V6Zm-.25 10.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <button class="price-btn">Price</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER BANNER -->
+    <div class="footer-banner">
+        <p>Didn't find what you're looking for? Create from scratch!</p>
+        <button class="start-designer-btn">Start Designer</button>
+    </div>
+
+</body>
+</html>

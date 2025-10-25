@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="shopping_cart.css"> 
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo-container">
+            <h1 class="logo-text">Cardist</h1>
+            <div class="logo-wave"></div>
+        </div>
+        <div class="menu-icon">
+            &#9776; </div>
+    </header>
+
+    <div class="main-container">
+        <div class="cart-items-container">
+            <div class="cart-title-area">
+                <h2>Shopping Cart</h2>
+                <a href="#" class="select-all">Select All Items</a>
+            </div>
+            <div class="price-header">Price</div>
+
+            <div class="cart-item">
+                <div class="item-left">
+                    <input type="checkbox" id="order1-item1">
+                    <div class="product-image-box">
+                        <span class="product-label">order 1</span>
+                    </div>
+                </div>
+                <div class="item-details">
+                    <p class="order-name">Order name here.</p>
+                    <button class="add-flowers-btn">Add Flowers to your order</button>
+                </div>
+                <div class="item-amount">
+                    Amount
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="item-left">
+                    <input type="checkbox" id="order1-item2">
+                    <div class="product-image-box">
+                        <span class="product-label">order 1</span>
+                    </div>
+                </div>
+                <div class="item-details">
+                    <p class="order-name">Order name here.</p>
+                    <button class="add-flowers-btn">Add Flowers to your order</button>
+                </div>
+                <div class="item-amount">
+                    Amount
+                </div>
+            </div>
+            
+            <div class="cart-subtotal-footer">
+                Subtotal (1 item): **₹ Amount**
+            </div>
+
+        </div>
+
+        <div class="summary-sidebar">
+            <p>Subtotal (1 item): **₹ Amount**</p>
+            <button class="proceed-btn">Proceed to Buy</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* --- Global Styles & Reset --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; 
+}
+
+/* --- 1. HEADER STYLES (Reused from Shopping Cart) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: linear-gradient(to right, #e0f7fa 0%, #ffffff 50%, #f4e9f9 100%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a148c; 
+    margin: 0;
+    padding-right: 5px;
+}
+
+.logo-wave {
+    width: 30px; /* Slightly smaller wave */
+    height: 8px;
+    background: linear-gradient(to right, #4a148c, #ab47bc, #f06292); 
+    border-radius: 50% / 100% 100% 0 0; 
+}
+
+.search-bar-container {
+    flex-grow: 1; /* Allows it to take up the middle space */
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 0 0 3px #f4e9f9; /* Light purple glow border */
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* --- 2. MAIN LAYOUT (Sidebar & Content Grid) --- */
+.main-layout {
+    display: flex;
+    min-height: calc(100vh - 120px); /* Adjust height for full page feel */
+}
+
+/* --- Sidebar (Left Column) --- */
+.sidebar {
+    width: 300px; 
+    padding: 20px 40px 20px 20px;
+    background-color: #fcfcfc;
+    border-right: 1px solid #eee;
+    /* Sticky sidebar effect, but allowing scrolling if content is long */
+    position: sticky;
+    top: 0; 
+    align-self: flex-start;
+}
+
+.filter-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #4a148c; /* Purple heading color */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Tag Buttons (Categories & Style) */
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tag:hover, .tag.active {
+    background-color: #e3f2fd; /* Light blue/purple background on active */
+    border-color: #64b5f6;
+    color: #1565c0;
+}
+
+/* Color Swatches */
+.color-palette {
+    display: flex;
+    gap: 10px;
+}
+
+.color-swatch {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.color-swatch.red { background-color: #f44336; }
+.color-swatch.purple { background-color: #9c27b0; }
+.color-swatch.green { background-color: #4CAF50; }
+.color-swatch.yellow { background-color: #ffeb3b; }
+.color-swatch.blue { background-color: #2196F3; }
+.color-swatch.pink { background-color: #e91e63; }
+
+/* Sorting Options */
+.sort-options {
+    display: flex;
+    gap: 10px;
+}
+
+.sort-btn {
+    background-color: #ffffff;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sort-btn.active {
+    background-color: #e6e6fa; /* Light lavender color */
+    border-color: #9370db;
+    color: #333;
+}
+
+/* Price Range */
+.price-range input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777;
+}
+
+/* --- Product Listing (Right Column) --- */
+.product-listing {
+    flex-grow: 1;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.product-grid {
+    display: grid;
+    /* 3 columns on desktop, adapts based on viewport size */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Product Card */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card-image-box {
+    height: 300px;
+    background-color: #f5f5f5; /* Light gray background for image area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.like-button svg {
+    width: 20px;
+    height: 20px;
+    color: #ccc; /* Light gray heart/placeholder */
+    transition: color 0.2s;
+}
+
+.price-btn {
+    background-color: #eee;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- 3. FOOTER BANNER --- */
+.footer-banner {
+    padding: 25px 40px;
+    background-color: #e0f2f7; /* Light blue/green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-top: 1px solid #d0e0e0;
+}
+
+.footer-banner p {
+    font-size: 16px;
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
+.start-designer-btn {
+    background: linear-gradient(to right, #a7e0c1, #c8e6c9); /* Green gradient */
+    color: #333;
+    border: 1px solid #93c4a2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.start-designer-btn:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,55 @@
+/* Note: You might need to import a custom font to perfectly match the "Thank You" script */
+
+body {
+    font-family: sans-serif; /* Fallback font */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    min-height: 100vh;      /* Take full viewport height */
+}
+
+.thankyou-container {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Butterfly Styling */
+.butterfly-placeholder {
+    margin-bottom: 20px;
+}
+
+.butterfly-icon {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    /* The pink color matching the image */
+    fill: #F8B1A8; 
+    transform: rotate(45deg); /* Simple rotation for a butterfly-like angle */
+}
+
+/* Main "Thank You" Message */
+.main-message {
+    /* The font is highly stylized (script/calligraphy). 
+       You need to replace 'Custom Script Font' with a font you link 
+       (e.g., from Google Fonts like 'Satisfy' or 'Tangerine')
+    */
+    font-family: 'Dancing Script', cursive; 
+    font-size: 80px;
+    font-weight: 600; /* Script fonts are often light */
+    color: #444; /* Dark gray color */
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /* Fallback style for the cursive look */
+    font-style: italic; 
+}
+
+/* Tagline */
+.tagline {
+    font-size: 16px;
+    color: #ff5252; /* Reddish-pink color */
+    margin-top: 25px;
+    font-style: italic;
+}

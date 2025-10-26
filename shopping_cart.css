@@ -140,13 +140,18 @@ body {
 }
 
 .add-flowers-btn {
-    background-color: #ff9800; /* Orange color */
+    background-color: #fd9f13; /* Orange color */
     color: #fff;
     border: none;
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
     font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.add-flowers-btn:hover {
+    background-color: #ffb362;
 }
 
 .item-amount {

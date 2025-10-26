@@ -36,8 +36,8 @@ body {
        (e.g., from Google Fonts like 'Satisfy' or 'Tangerine')
     */
     font-family: 'Dancing Script', cursive; 
-    font-size: 80px;
-    font-weight: 600; /* Script fonts are often light */
+    font-size: 170px;
+    font-weight: 400; /* Script fonts are often light */
     color: #444; /* Dark gray color */
     margin: 0;
     padding: 0;
@@ -48,8 +48,9 @@ body {
 
 /* Tagline */
 .tagline {
-    font-size: 16px;
-    color: #ff5252; /* Reddish-pink color */
+    font-size: 20px;
+    color: #d56c6c; /* Reddish-pink color */
     margin-top: 25px;
+    font-family:cursive;
     font-style: italic;
 }

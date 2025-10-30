@@ -8,14 +8,32 @@ body {
 
 /* 1. HEADER/NAV BAR STYLES */
 .editor-header {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     /* Purple/Lavender background and border matching the screenshot */
-    background: linear-gradient(to right, #e6e6fa, #f0e6fa); 
+   /* background: linear-gradient(to right, #e6e6fa, #f0e6fa); 
     border-bottom: 2px solid #ce93d8; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    /* CHANGE: Remove default space-between */
+    justify-content: flex-start; /* Start elements from the left */
+    align-items: center;
+    padding: 10px 20px;
+    /* ... (rest of the header styles) ... */
+    background: linear-gradient(to right, #e6e6fa, #f0e6fa); 
+    border-bottom: 2px solid #ce93d8;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Find or add this section in customization.css */
+.header-left {
+    /* ADD these lines */
+    width: 250px; 
+    padding-right: 20px;
+    box-sizing: border-box; 
+    flex-shrink: 0;
 }
 
 .header-left .menu-icon {
@@ -27,26 +45,54 @@ body {
 
 /* Center Icons (Undo, Redo, Save) */
 .header-center {
+    /*display: flex;
+    gap: 15px;*/
+    flex-grow: 1; /* Allows it to take up all available horizontal space */
     display: flex;
+    justify-content: center; /* CRITICAL: Centers the content horizontally */
     gap: 15px;
 }
 
 .header-center .icon-btn {
-    background: none;
+    /*background: none;
     border: none;
     cursor: pointer;
     padding: 5px;
     /* Since we don't have SVG icons, we'll use placeholders */
-    width: 20px; 
+    /*width: 20px; 
     height: 20px;
     border: 1px solid #ccc; /* Placeholder box */
+    background: none;
+    border: none; /* REMOVE: Placeholder border */
+    cursor: pointer;
+    padding: 5px;
+    width: auto; /* REMOVE: Fixed width */
+    height: auto; /* REMOVE: Fixed height */
 }
+
+/* NEW RULE: Style the image inside the button */
+.header-center .icon-btn img {
+    width: 20px; /* Set the desired icon size */
+    height: 20px;
+    display: block;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.header-center .icon-btn:hover img {
+    opacity: 1; /* Make icon fully opaque on hover */
+}
+/*----------------
 
 /* Right Buttons (Preview, Continue) */
 .header-right {
     display: flex;
     gap: 10px;
     align-items: center;
+    /* Set a minimum width for the Preview/Order buttons */
+    min-width: 200px; 
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .preview-btn, .continue-btn {
@@ -132,24 +178,142 @@ body {
     padding: 20px;
 }
 
-/* Card Placeholder */
-.card-placeholder-wrapper {
-    /* Ensures the card area is centered and sized correctly */
+/* Card Placeholder Wrapper - Acts as the visible card container 
+card-placeholder-wrapper {
+    /* Ensures the card area is centered and sized correctly 
     max-width: 600px;
-    width: 100%;
-    /* Use aspect ratio to ensure a standard card size (e.g., 2:3 portrait) */
+    width: 100%;      
+    /* Standard card size (e.g., 2:3 portrait) 
     aspect-ratio: 2 / 3; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    position: relative;
+    position: relative; /* Needed for absolute positioning of card views 
+    border: 1px solid #333; /* Visual border for the card 
+} */
+
+/* Card Placeholder Wrapper - Acts as the visible card container */
+.card-placeholder-wrapper {
+    /* Base Standard card size (2:3 portrait) */
+    aspect-ratio: 2 / 3; 
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative; 
+    border: 1px solid #333; 
+    transition: aspect-ratio 0.3s, max-width 0.3s; /* Add transition for smooth resizing */
 }
 
+/* CRITICAL NEW RULE: Wide Spread Aspect Ratio (For INSIDE View) */
+.card-placeholder-wrapper.wide-spread {
+    /* Change ratio to a landscape orientation: 4 wide to 3 tall (Twice as wide as 2/3) */
+    aspect-ratio: 4 / 3; 
+    max-width: 900px; /* Increase max-width to utilize more screen space */
+}
+
+/* Individual Card Views (Front, Back, Inside) */
 .card-placeholder {
     width: 100%;
-    height: 70%;
-    /* Placeholder background if needed, otherwise leave it empty/white */
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    /* Use absolute positioning to stack them, only the 'active' one will show */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Default: Hidden */
+    display: none; 
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Active Card View */
+.card-placeholder.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* 1. Back View Styles (for the photo and text placeholders) */
+.back-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.photo-placeholder {
+    width: 150px;
+    height: 150px;
+    border: 1px dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* 2. Inside View Styles (Two-Page Spread) */
+#card-inside.active {
+    /* Override display: flex from .card-placeholder.active to use the spread container */
+    display: block; 
+}
+
+.inside-spread {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Simulate the opened card structure */
+    border: 1px solid #333; /* Border for the overall open card view */
+}
+
+.inside-page {
+    flex: 1; /* Each page takes up 50% of the width */
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.left-page {
+    /* Optional: Add a subtle border to separate the pages */
+    border-right: 1px solid #ddd; 
+}
+
+.text-placeholder {
+    font-style: italic;
+    color: #999;
+    font-size: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+
+.card-placeholder textarea {
+    width: 80%;
+    height: 60%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px dashed #ccc;
+    resize: none;
+    font-size: 1rem;
 }
 
 
@@ -168,6 +332,8 @@ body {
     border: 1px solid #ccc;
     cursor: pointer;
     transition: all 0.2s;
+    min-width: 80px;
+    text-transform: capitalize;
 }
 
 .nav-btn.active {
@@ -176,4 +342,5 @@ body {
     border-color: #4dd0e1;
     color: #00838f;
     font-weight: bold;
+    box-shadow: 0 0 5px rgba(77, 208, 225, 0.5);
 }

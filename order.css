@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #f7f3ff 0%, #e6e6fa 100%);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #8a2be2; /* Violet */
+    display: flex;
+    align-items: center;
+}
+.logo-pulse { /* Simple graphic placeholder */
+    width: 15px;
+    height: 8px;
+    margin-left: 5px;
+    background-color: #ce93d8;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(0.8); opacity: 0.7; }
+}
+.menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #4a148c;
+}
+
+/* Main Layout */
+.order-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Card Preview (Left Column) */
+.card-preview-section {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-frame {
+    width: 280px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+.view-buttons {
+    display: flex;
+    gap: 10px;
+}
+.view-btn {
+    padding: 8px 25px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.view-btn:hover {
+    border-color: #a052ff;
+}
+.view-btn.active {
+    background-color: #a052ff;
+    color: #fff;
+    border-color: #a052ff;
+}
+
+/* Order Details & Actions (Middle and Right Columns Combined) */
+.order-details-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.order-main-content {
+    display: flex;
+    gap: 40px;
+}
+
+/* Middle Column (Order Info) */
+.order-info {
+    flex: 2;
+}
+.order-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #4a148c;
+}
+.amount-box {
+    margin-bottom: 30px;
+}
+.amount-box h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    color: #333;
+}
+.amount-box small {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.offers-section {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+.offers-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #6a1b9a;
+    margin-bottom: 15px;
+}
+.offers-grid {
+    display: flex;
+    gap: 15px;
+}
+.offer-card {
+    flex: 1;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+.offer-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.offer-card p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+}
+
+/* Right Column (Action Buttons) */
+.action-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.action-btn {
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s, box-shadow 0.1s, background-color 0.2s;
+}
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-edit {
+    background-color: #72ceff;
+}
+.btn-edit:hover {
+    background-color: #8addf9;
+}
+
+.btn-cart {
+    background-color: #ffdc3f;
+}    
+.btn-cart:hover {
+    background-color: #fdef72;
+}
+
+.btn-buy {
+    background-color: #ffae35;
+}
+.btn-buy:hover {
+    background-color: #ffc146;
+}
+
+.btn-wishlist {
+    background-color: #e595fb;
+}
+.btn-wishlist:hover {
+    background-color: #fdadf4;
+}
+
+/* Security Icons Section */
+.security-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+.security-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 0 10px;
+}
+.security-item i {
+    font-size: 2rem;
+    color: #8a2be2;
+    margin-bottom: 10px;
+}
+.security-item span {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.3;
+}
+
+/* Product Details */
+.product-details-section {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px 0;
+}
+.product-details-section h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4a148c;
+    margin-bottom: 15px;
+}
+.product-details-section ul {
+    list-style: disc;
+    padding-left: 20px;
+    line-height: 1.8;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 950px) {
+    .order-container {
+        flex-direction: column;
+        margin: 30px auto;
+    }
+    .order-main-content {
+        flex-direction: column;
+    }
+    .order-info {
+        order: 2; /* Move info below action buttons on mobile */
+    }
+    .action-buttons {
+        order: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .action-btn {
+        flex: 1 1 45%; /* Two buttons per row */
+    }
+    .security-section {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .security-item {
+        flex: 0 0 30%; /* Three icons per row */
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .header {
+        padding: 10px 20px;
+    }
+    .order-container {
+        padding: 0 10px;
+    }
+    .card-frame {
+        width: 250px;
+        height: 350px;
+    }
+    .action-btn {
+        flex: 1 1 100%; /* Full width buttons on small phones */
+    }
+    .security-item {
+        flex: 0 0 45%; /* Two icons per row */
+    }
+}

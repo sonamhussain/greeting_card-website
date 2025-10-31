@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customization Workplace</title>
+    <link rel="stylesheet" href="customization.css">
+</head>
+<body>
+    
+    <!-- 1. TOP HEADER/NAV BAR -->
+    <header class="editor-header">
+        <div class="header-left">
+            <span class="menu-icon">&#9776;</span>
+        </div>
+        
+        <div class="header-center">
+            <button class="icon-btn"><img src="Images/undo.png" alt="Undo" title="Undo"></button>
+            <button class="icon-btn"><img src="Images/redo.png" alt="Redo" title="Redo"></button>
+            <button class="icon-btn"><img src="Images/Save.png" alt="Save" title="Save"></button>
+        </div>
+        
+        <div class="header-right">
+            <button class="preview-btn">Preview</button>
+            <button class="continue-btn">Continue to Order</button>
+        </div>
+    </header>
+
+    <!-- 2. MAIN LAYOUT (Sidebar and Content) -->
+    <div class="main-workspace">
+        
+        <!-- LEFT SIDEBAR: Editing Options -->
+        <aside class="sidebar">
+            <h3 class="sidebar-heading">Edit/Add</h3>
+            <ul class="edit-options">
+                <li>Text</li>
+                <li>Shapes</li>
+                <li>Images</li>
+                <li>Stickers</li>
+                <li>Frames</li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT: Card Area -->
+        <main class="card-area">
+            
+            <!-- Card Placeholder Area -->
+            <div id="card-placeholder-wrapper" class="card-placeholder-wrapper">
+                
+                <!-- Card View 1: FRONT -->
+                <div id="card-front" class="card-placeholder active">
+                    <p>FRONT: Your card design goes here.</p>
+                </div>
+
+                <!-- Card View 2: BACK (Initially hidden) -->
+                <div id="card-back" class="card-placeholder">
+                    <div class="back-content">
+                        <div class="photo-placeholder">
+                            <p>Add photo<br>(optional)</p>
+                        </div>
+                        <p class="text-placeholder">Enter text...</p>
+                    </div>
+                </div>
+
+                <!-- Card View 3: INSIDE (Initially hidden) -->
+                <div id="card-inside" class="card-placeholder">
+                    <div class="inside-spread">
+                        <div class="inside-page left-page">
+                            <p>Left Page Content</p>
+                        </div>
+                        <div class="inside-page right-page">
+                            <p class="text-placeholder">Enter text...</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Bottom Navigation for Card Sides -->
+            <div class="card-nav">
+                <button id="nav-front" class="nav-btn active" data-view="front">front</button>
+                <button id="nav-back" class="nav-btn" data-view="back">back</button>
+                <button id="nav-inside" class="nav-btn" data-view="inside">inside</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="customization.js"></script>
+</body>
+</html>
